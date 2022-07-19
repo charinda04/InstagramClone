@@ -1,0 +1,116 @@
+env:
+  browser: true
+  jest: true
+extends:
+  - '@react-native-community'
+  - airbnb
+  - airbnb/hooks
+  - plugin:react/recommended
+  - eslint:recommended
+  - plugin:@typescript-eslint/eslint-recommended
+  - plugin:@typescript-eslint/recommended
+  - plugin:@typescript-eslint/recommended-requiring-type-checking
+  - prettier
+  - plugin:prettier/recommended
+  - plugin:import/warnings
+  - plugin:import/typescript
+  - plugin:jest/recommended
+  - plugin:jest/style
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  project: './tsconfig.json'
+plugins:
+  - '@typescript-eslint'
+  - prettier
+  - react
+  - import
+  - jest
+rules:
+  react/jsx-filename-extension:
+    - error
+    - extensions:
+        - '.ts'
+        - '.tsx'
+  import/extensions:
+    - error
+    - ignorePackages
+    - js: never
+      jsx: never
+      ts: never
+      tsx: never
+  linebreak-style: 0
+  jsx-a11y/label-has-for: off
+  arrow-body-style:
+    - warn
+    - as-needed
+  react/destructuring-assignment:
+    - warn
+    - always
+    - ignoreClassFields: true
+  no-negated-condition: warn
+  no-var: error
+  prefer-const: warn
+  jsx-a11y/label-has-associated-control: off
+  react/button-has-type: off
+  react/sort-comp:
+    - warn
+    - order:
+        - static-methods
+        - lifecycle
+        - everything-else
+        - handling
+        - rendering
+      groups:
+        rendering:
+          - /^render.+$/
+          - render
+        handling:
+          - /^handle.+$/
+          - /^on.+$/
+  import/no-useless-path-segments: warn
+  import/named: warn
+  import/order: warn
+  no-console: warn
+  no-unused-vars: 'off'
+  no-shadow: 'off'
+  no-use-before-define: 'off'
+  '@typescript-eslint/no-use-before-define': ['error']
+  '@typescript-eslint/no-shadow': warn
+  '@typescript-eslint/no-unused-vars': warn
+  '@typescript-eslint/no-angle-bracket-type-assertion': off
+  '@typescript-eslint/no-floating-promises': off
+  '@typescript-eslint/explicit-function-return-type': warn
+  import/prefer-default-export: off
+  import/no-unresolved: off
+  react/display-name: off
+  react/prop-types: 0
+  prettier/prettier:
+    - warn
+    - singleQuote: true
+  react/jsx-props-no-spreading: 0
+  react/require-default-props: 0
+settings:
+  propWrapperFunctions:
+    - forbidExtraProps
+  import/resolver:
+    node:
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.png']
+      paths:
+        [
+          'src',
+          'modules',
+          'components',
+          'constants',
+          'apis',
+          'store',
+          'styles',
+          'services',
+          'navigation',
+          'types',
+          'shared',
+          'utils',
+          'assets',
+          'components',
+        ]
