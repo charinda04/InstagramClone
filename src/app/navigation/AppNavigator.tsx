@@ -14,7 +14,7 @@ import MainStackNavigator from './MainStackNavigator';
 const Stack = createNativeStackNavigator();
 
 const AppNavigator: React.FC = () => {
-  const isLoggedIn = true;
+  // const isLoggedIn = true;
   useEffect(() => {
     // LoggingService.init();
     // if (isTablet()) {

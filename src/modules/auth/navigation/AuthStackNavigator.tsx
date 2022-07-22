@@ -3,7 +3,6 @@ import { LOGIN } from '@src/app/navigation/route.actions';
 import * as React from 'react';
 import Login from '../screens/Login';
 
-
 const AuthStackNavigator: React.FC = () => {
   const Stack = createNativeStackNavigator();
 

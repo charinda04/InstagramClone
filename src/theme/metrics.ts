@@ -1,13 +1,7 @@
 /* App wide metrics (TO BE REFACTORED) */
-import { Dimensions, PixelRatio, Platform } from 'react-native';
-import { hasNotch as notchHave } from 'react-native-device-info';
-import { getStatusBarHeight } from 'react-native-status-bar-height';
+import { Dimensions, PixelRatio } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
-
-const isAndroid = Platform.OS === 'android';
-const StatusBarHeight = getStatusBarHeight();
-const hasNotch = (): boolean => (isAndroid ? StatusBarHeight > 25 || notchHave() : notchHave());
 
 export const viewportWidth: number = width;
 
@@ -26,24 +20,6 @@ export const pixelDensity = 3 / PixelRatio.get();
 export const calculateMetric = (value: number): number => (value / designViewPortWidth) * viewportWidth;
 
 export const calculatePixels = (value: number): number => value * pixelDensity;
-
-export const transparentAppBarMarginTop = hasNotch() ? 50 : 25;
-
-let ExtraStatusBarHeight = 0;
-
-const virtualStatusBarHeight = (): number => {
-  let heightLocal = StatusBarHeight;
-  if (isAndroid) {
-    ExtraStatusBarHeight = 10;
-    heightLocal = StatusBarHeight + ExtraStatusBarHeight;
-  } else if (!hasNotch()) {
-    ExtraStatusBarHeight = 10;
-    heightLocal = StatusBarHeight + ExtraStatusBarHeight;
-  }
-  return heightLocal;
-};
-
-export const SafeStatusBarHeight = virtualStatusBarHeight();
 
 /**
  * App dimensions
@@ -135,6 +111,4 @@ export default {
    * @type {Object}
    */
   borderRadius: {},
-
-  SafeStatusBarHeight,
 };

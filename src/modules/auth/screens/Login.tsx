@@ -1,5 +1,5 @@
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
-import React, { useState } from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+import React from 'react';
 // import Auth from '@react-native-firebase/auth';
 import { ParamListBase } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
@@ -47,8 +47,8 @@ interface Props {
 
 const Login: React.FC<Props> = props => {
   const { navigation } = props;
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
   const {
     login: { noAccount, buttonText },
   } = StringData;
@@ -61,14 +61,14 @@ const Login: React.FC<Props> = props => {
     navigation.navigate('Register');
   };
 
-  const handleEmailChange = (txt: string): void => setEmail(txt);
-  const handlePasswordChange = (txt: string): void => setPassword(txt);
+  // const handleEmailChange = (txt: string): void => setEmail(txt);
+  // const handlePasswordChange = (txt: string): void => setPassword(txt);
 
   return (
     <View style={styles.center}>
       <View style={styles.formCenter}>
-        <TextInput style={styles.textInput} placeholder="email" onChangeText={handleEmailChange} />
-        <TextInput style={styles.textInput} placeholder="password" secureTextEntry onChangeText={handlePasswordChange} />
+        {/* <TextInput style={styles.textInput} placeholder="email" onChangeText={handleEmailChange} /> */}
+        {/* <TextInput style={styles.textInput} placeholder="password" secureTextEntry onChangeText={handlePasswordChange} /> */}
 
         <Button onPress={onSignUp} title={buttonText} />
       </View>

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { HttpMethods } from '@src/shared/enums';
 import axiosInstance from './axiosInstance';
 
@@ -26,6 +27,7 @@ export default class BaseApi {
     return this.executeAsync<T>(HttpMethods.Delete, endPoint, queryStringParameters, data);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   protected async executeAsync<T>(method: HttpMethods, endPoint: string, queryStringParameters?: QueryParams, data?: {}): Promise<T> {
     const axiosPromise = await axiosInstance.request<T>({
       method,

@@ -12,8 +12,6 @@ import React from 'react';
 
 import AppNavigator from './navigation/AppNavigator';
 
-const App = () => {
-  return <AppNavigator />;
-};
+const App = (): JSX.Element => <AppNavigator />;
 
 export default App;
