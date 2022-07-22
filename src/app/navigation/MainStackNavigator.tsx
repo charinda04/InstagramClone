@@ -15,6 +15,14 @@ const MainStackNavigator: React.FC<Props> = (): JSX.Element => {
   return (
     <MainStack.Navigator initialRouteName={MAIN_TAB_NAVIGATOR} screenOptions={{ headerShown: false }}>
       <MainStack.Screen name={MAIN_TAB_NAVIGATOR} component={MainTabNavigator} />
+
+      {/* <RootStack.Screen
+        name="Story"
+        component={StoryScreen}
+        options={{
+          headerShown: false,
+        }}
+      /> */}
     </MainStack.Navigator>
   );
 };
