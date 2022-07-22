@@ -4,3 +4,5 @@ export const MAIN_TAB_NAVIGATOR = 'MAIN_TAB_NAVIGATOR';
 export const HOME = 'HOME';
 export const PROFILE = 'PROFILE';
 export const CARDS = 'CARDS';
+
+export const LOGIN = 'LOGIN';

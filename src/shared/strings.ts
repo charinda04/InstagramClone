@@ -11,4 +11,8 @@ export default {
     manage: 'manage',
     notifications: 'notifications',
   },
+  login: {
+    noAccount: "Don't have an account? SignUp.",
+    buttonText: 'Sign In',
+  },
 };
