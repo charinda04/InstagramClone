@@ -29,7 +29,7 @@ const MainTabNavigator: React.FC = () => {
 
   return (
     <TabStack.Navigator
-      screenOptions={({ route }) => ({
+      screenOptions={({ route }): BottomTabNavigationOptions => ({
         tabBarIcon: ({ color, size }): React.ReactNode => {
           if (route.name === 'Home') {
             return <Foundation name="home" size={size} color={color} />;
