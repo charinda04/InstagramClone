@@ -10,6 +10,7 @@ import {
   ActivityIndicator,
   Dimensions,
   GestureResponderEvent,
+  TouchableOpacity,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { ProfilePicture } from '@src/components';
@@ -19,6 +20,7 @@ import storiesData from '@assets/data/stories';
 import { UserStory, StoryObject } from '../types';
 import { ParamListBase, RouteProp, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
+import { HOME, MAIN_TAB_NAVIGATOR } from '@src/app/navigation/route.actions';
 
 const styles = StyleSheet.create({
   container: {
@@ -88,7 +90,7 @@ interface Props {
 }
 
 type NavParams = {
-  userId: string;
+  userId?: string;
 };
 
 const Story: React.FC<Props> = props => {
@@ -98,11 +100,11 @@ const Story: React.FC<Props> = props => {
   const [activeStoryIndex, setActiveStoryIndex] = useState<number>(0);
   // const [activeStory, setActiveStory] = useState<StoryObject | undefined>();
   const activeStory = userStories && userStories.stories[activeStoryIndex];
+  const userId = navParams?.userId;
 
   const fetchStories = async () => {
     try {
       // const storiesData = await API.graphql(graphqlOperation(listStorys));
-      const userId = navParams?.userId;
       // const storiesDataArray = storiesData as Array<Story>;
       const tempUserStories = storiesData.find(storyData => storyData.user.id === userId);
       setUserStories(tempUserStories);
@@ -133,8 +135,19 @@ const Story: React.FC<Props> = props => {
     // setActiveStory(userStories.stories[activeStoryIndex]);
   }, [activeStoryIndex]);
 
+  const navigateToNextUser = (): void => {
+    if (!userId) return;
+    navigation.push('Story', { userId: (parseInt(userId, 10) + 1).toString() });
+  };
+
+  const navigateToPreviousUser = (): void => {
+    if (!userId) return;
+    navigation.push('Story', { userId: (parseInt(userId, 10) - 1).toString() });
+  };
+
   const handleNextStory = () => {
     if (userStories && activeStoryIndex >= userStories?.stories.length - 1) {
+      navigateToNextUser();
       return;
     }
     setActiveStoryIndex(activeStoryIndex + 1);
@@ -142,6 +155,7 @@ const Story: React.FC<Props> = props => {
 
   const handlePrevStory = () => {
     if (activeStoryIndex <= 0) {
+      navigateToPreviousUser();
       return;
     }
     setActiveStoryIndex(activeStoryIndex - 1);
@@ -173,7 +187,12 @@ const Story: React.FC<Props> = props => {
       <TouchableWithoutFeedback onPress={handlePress}>
         <ImageBackground source={{ uri: activeStory.imageUri }} style={styles.image}>
           <View style={styles.userInfo}>
-            <ProfilePicture uri={userStories.user.imageUri} size={50} />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(MAIN_TAB_NAVIGATOR);
+              }}>
+              <ProfilePicture uri={userStories.user.imageUri} size={50} />
+            </TouchableOpacity>
             <Text style={styles.userName}>{userStories.user.name}</Text>
             <Text style={styles.postedTime}>{activeStory.postedTime}</Text>
           </View>
