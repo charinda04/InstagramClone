@@ -22,6 +22,10 @@ interface Props {
 
 const ProfilePicture: React.FC<Props> = props => {
   const { uri, size = 70 } = props;
+
+  console.log('==', uri);
+
+
   return (
     <View style={[styles.container, { width: size + 6, height: size + 6 }]}>
       <Image source={{ uri }} style={[styles.image, { width: size, height: size }]} />
