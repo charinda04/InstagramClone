@@ -17,7 +17,7 @@ interface Props {
 
 const UserStoryPreview: React.FC<Props> = props => {
   const {
-    user: { imageUri, name },
+    user: { imageUri, name, id },
   } = props;
 
   const navigation = useNavigation();

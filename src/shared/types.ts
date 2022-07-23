@@ -4,12 +4,14 @@ export interface User {
   name: string;
 }
 
-export interface Story {
+export interface StoryObject {
+  imageUri: string;
+  postedTime: string;
+}
+
+export interface UserStory {
   user: User;
-  stories: Array<{
-    imageUri: string;
-    postedTime: string;
-  }>;
+  stories: Array<StoryObject>;
 }
 
 export interface PostType {

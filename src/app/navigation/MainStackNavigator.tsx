@@ -1,6 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator, NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ParamListBase } from '@react-navigation/routers';
+import Story from '@src/shared/screens/Story';
 
 import MainTabNavigator from './MainTabNavigator';
 import { MAIN_TAB_NAVIGATOR } from './route.actions';
@@ -15,14 +16,7 @@ const MainStackNavigator: React.FC<Props> = (): JSX.Element => {
   return (
     <MainStack.Navigator initialRouteName={MAIN_TAB_NAVIGATOR} screenOptions={{ headerShown: false }}>
       <MainStack.Screen name={MAIN_TAB_NAVIGATOR} component={MainTabNavigator} />
-
-      {/* <RootStack.Screen
-        name="Story"
-        component={StoryScreen}
-        options={{
-          headerShown: false,
-        }}
-      /> */}
+      <MainStack.Screen name="Story" component={Story} />
     </MainStack.Navigator>
   );
 };
