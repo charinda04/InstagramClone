@@ -13,7 +13,6 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import { ProfilePicture } from '@src/components';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import storiesData from '@assets/data/stories';
@@ -21,6 +20,7 @@ import { UserStory, StoryObject } from '../types';
 import { ParamListBase, RouteProp, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { HOME, MAIN_TAB_NAVIGATOR } from '@src/app/navigation/route.actions';
+import { ProfilePicture } from 'react-native-instagram-clone-components';
 
 const styles = StyleSheet.create({
   container: {

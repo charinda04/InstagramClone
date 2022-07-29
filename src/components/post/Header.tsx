@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import Icon from 'react-native-vector-icons/Entypo';
-import ProfilePicture from '../profilePicture/ProfilePicture';
+import { ProfilePicture } from 'react-native-instagram-clone-components';
 
 const styles = StyleSheet.create({
   container: {

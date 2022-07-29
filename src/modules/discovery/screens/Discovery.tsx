@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { AppText } from 'react-native-instagram-clone-components';
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
 
 const Discovery: React.FC = () => (
   <View style={styles.container}>
-    <Text style={styles.textStyle}>Discovery</Text>
+    <AppText>Discovery</AppText>
   </View>
 );
 

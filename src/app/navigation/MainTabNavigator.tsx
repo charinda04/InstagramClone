@@ -5,23 +5,21 @@ import Foundation from 'react-native-vector-icons/Foundation';
 import Feather from 'react-native-vector-icons/Feather';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import Discovery from '@src/modules/discovery/screens/Discovery';
 import CreatePost from '@src/modules/createPost/CreatePost';
 import Notifications from '@src/modules/notifications/Notifications';
 import Profile from '@src/modules/profile/screens/Profile';
+
 import HomeStackNavigator from './HomeStackNavigator';
 
 const tabBarOptions: BottomTabNavigationOptions = {
   headerShown: false,
   tabBarAllowFontScaling: false,
-  // tabBarLabelStyle: styles.labelStyles,
-  // tabBarActiveTintColor: colors.colorPalette.black,
-  // tabBarStyle: styles.generalStyles,
   tabBarLabelPosition: 'below-icon',
   tabBarActiveTintColor: '#000',
   tabBarInactiveTintColor: 'gray',
   tabBarShowLabel: false,
-  // showLabel: false,
 };
 
 const MainTabNavigator: React.FC = () => {

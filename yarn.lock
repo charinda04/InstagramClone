@@ -6158,6 +6158,14 @@ react-native-gradle-plugin@^0.0.7:
   resolved "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.7.tgz"
   integrity sha512-+4JpbIx42zGTONhBTIXSyfyHICHC29VTvhkkoUOJAh/XHPEixpuBduYgf6Y4y9wsN1ARlQhBBoptTvXvAFQf5g==
 
+react-native-instagram-clone-components@../InstagramCloneComponents/react-native-instagram-clone-components-0.0.2.tgz:
+  version "0.0.2"
+  resolved "../InstagramCloneComponents/react-native-instagram-clone-components-0.0.2.tgz#82f0655f2cf6852132dead90962e57f6fad5fb5c"
+  dependencies:
+    react-native-gesture-handler "^2.5.0"
+    react-native-reanimated "^2.9.1"
+    react-native-vector-icons "^9.2.0"
+
 react-native-reanimated@^2.9.1:
   version "2.9.1"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.9.1.tgz#d9a932e312c13c05b4f919e43ebbf76d996e0bc1"
